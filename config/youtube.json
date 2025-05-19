@@ -1,0 +1,5 @@
+{
+  "api_key": "YOUR_API",
+  "channel_id": "YOUR_CHANNEL_ID",
+  "discord_channel_id": channel_id
+}
