@@ -10,7 +10,6 @@ class TwitchToTelegram(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-        # Загрузка конфигурации
         with open("config/twitch.json", "r", encoding="utf-8") as f:
             twitch_cfg = json.load(f)
             self.client_id = twitch_cfg["client_id"]
@@ -83,7 +82,6 @@ class TwitchToTelegram(commands.Cog):
     @tasks.loop(seconds=60)
     async def check_stream(self):
         try:
-            # Проверка DNS-доступности Twitch
             try:
                 socket.gethostbyname("id.twitch.tv")
             except socket.gaierror:
